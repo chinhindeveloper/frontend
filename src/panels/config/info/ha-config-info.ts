@@ -109,21 +109,11 @@ class HaConfigInfo extends LitElement {
         back-path="/config"
         .header=${this.hass.localize("ui.panel.config.info.caption")}
       >
+        <div>
+          <img src="/static/icons/favicon-512x512.png" alt="Smartverse" />
+        </div>
         <div class="content">
           <ha-card outlined class="header">
-            <a
-              href=${documentationUrl(this.hass, "")}
-              target="_blank"
-              rel="noreferrer"
-            >
-              <ha-logo-svg
-                title=${this.hass.localize(
-                  "ui.panel.config.info.home_assistant_logo"
-                )}
-              >
-              </ha-logo-svg>
-            </a>
-            <p>Home Assistant</p>
             <ul class="versions">
               <li>
                 <span class="version-label">Core</span>
@@ -159,19 +149,6 @@ class HaConfigInfo extends LitElement {
               </li>
             </ul>
           </ha-card>
-          <ha-card outlined class="ohf">
-            <div>
-              ${this.hass.localize("ui.panel.config.info.proud_part_of")}
-            </div>
-            <a
-              href="https://www.openhomefoundation.org"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <img src="/static/icons/ohf.svg" alt="Open Home Foundation" />
-            </a>
-          </ha-card>
-
           <ha-card outlined class="pages">
             <mwc-list>
               <ha-list-item graphic="avatar" @click=${this._showShortcuts}>
