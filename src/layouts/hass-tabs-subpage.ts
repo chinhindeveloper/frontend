@@ -134,35 +134,20 @@ class HassTabsSubpage extends LitElement {
                   ></ha-menu-button>
                 `
               : this.backPath
-                ? html`
-                    <a href=${this.backPath}>
-                      <ha-icon-button-arrow-prev
-                        .hass=${this.hass}
-                      ></ha-icon-button-arrow-prev>
-                    </a>
-                  `
-                : html`
-                    <ha-icon-button-arrow-prev
-                      .hass=${this.hass}
-                      @click=${this._backTapped}
-                    ></ha-icon-button-arrow-prev>
-                  `}
+                ? ""
+                : ""}
             ${this.narrow || !showTabs
               ? html`<div class="main-title">
                   <slot name="header">${!showTabs ? tabs[0] : ""}</slot>
                 </div>`
               : ""}
-            ${showTabs && !this.narrow
-              ? html`<div id="tabbar">${tabs}</div>`
-              : ""}
+            ${showTabs && !this.narrow ? "" : ""}
             <div id="toolbar-icon">
               <slot name="toolbar-icon"></slot>
             </div>
           </div>
         </slot>
-        ${showTabs && this.narrow
-          ? html`<div id="tabbar" class="bottom-bar">${tabs}</div>`
-          : ""}
+        ${showTabs && this.narrow ? "" : ""}
       </div>
       <div class="container">
         ${this.pane
